@@ -91,6 +91,19 @@
 				<OnLoad>CrossGambling_STATS_Button.tooltipText="Show's all user stats."</OnLoad>
 				</Scripts>
 			</Button>
+			<Button name="CrossGambling_Automate_Button" inherits="OptaionsButtonTemplate" movable="true" text="Automate!">
+				<Anchors>
+					<Ancor point="BOTTOM">
+						<Offset x="105" y="5" />
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>
+						CrossGambling_OnClickAutomate();
+					</OnClick>
+					<OnLoad>CrossGambling_Automate_Button.tooltipText="Automate the gamble by a number of seconds."</OnLoad>
+				</Scripts>
+			</Button>
 			<EditBox name="CrossGambling_EditBox" letters="6">
 				<Size>
 					<AbsDimension x="100" y="30" />

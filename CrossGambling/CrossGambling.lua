@@ -534,6 +534,15 @@ function CrossGambling_OnClickLASTCALL()
 	CrossGambling_ROLL_Button:Enable();
 end
 
+function CrossGambling_OnClickAutomate()
+  local selectedTime = tonumber(BreakUpLargeNumbers(CrossGambling_EditBox:GetText() );
+	local openRollTimer = selectedTime * .8;
+	local lastChanceTimer = selectedTime - openRollTimer;
+	CrossGambling_OnClickACCEPTONES();
+	C_Timer.After( openRollTimer, CrossGambling_OnClickLASTCALL() );
+	C_Timer.After( openRollTimer + lastChanceTimer + .5, CrossGambling_OnClickROLL());
+end
+
 function CrossGambling_OnClickACCEPTONES()
 		if CrossGambling_EditBox:GetText() ~= "" and CrossGambling_EditBox:GetText() ~= "1" then
 			CrossGambling_Reset();
@@ -614,7 +623,7 @@ function CrossGambling_Report()
 		CrossGambling["stats"][lowname] = (CrossGambling["stats"][lowname] or 0) - goldowed;
 
 		ChatMsg(string3);
-		
+
 		if (CrossGambling["loser"]) then
 			ChatMsg(string.format(L["%s can now set the next gambling amount by saying !amount x"], lowname));
 			AcceptLoserAmount = lowname
