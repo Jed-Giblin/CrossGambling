@@ -535,12 +535,12 @@ function CrossGambling_OnClickLASTCALL()
 end
 
 function CrossGambling_OnClickAutomate()
-  local selectedTime = tonumber(BreakUpLargeNumbers(CrossGambling_EditBox:GetText() );
-	local openRollTimer = selectedTime * .8;
-	local lastChanceTimer = selectedTime - openRollTimer;
+  CrossGambling_Reset();
+  CrossGambling_AcceptOnes_Button:SetText("Open Entry");
+  CrossGambling_CHAT_Button:Enable();
 	CrossGambling_OnClickACCEPTONES();
-	C_Timer.After( openRollTimer, CrossGambling_OnClickLASTCALL() );
-	C_Timer.After( openRollTimer + lastChanceTimer + .5, CrossGambling_OnClickROLL());
+	C_Timer.After( 15, CrossGambling_OnClickLASTCALL );
+	C_Timer.After( 24, CrossGambling_OnClickROLL );
 end
 
 function CrossGambling_OnClickACCEPTONES()

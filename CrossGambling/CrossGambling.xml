@@ -3,7 +3,7 @@
 	<Animation />
 	<Frame name="CrossGambling_Frame" parent="UIParent" toplevel="true" movable="true" enableMouse="true">
 		<Size>
-			<AbsDimension x="320" y="150" />
+			<AbsDimension x="320" y="180" />
 		</Size>
 		<Anchors>
 			<Anchor point="TOPLEFT" relativeTo="UIParent" />
@@ -91,9 +91,9 @@
 				<OnLoad>CrossGambling_STATS_Button.tooltipText="Show's all user stats."</OnLoad>
 				</Scripts>
 			</Button>
-			<Button name="CrossGambling_Automate_Button" inherits="OptaionsButtonTemplate" movable="true" text="Automate!">
+			<Button name="CrossGambling_Automate_Button" inherits="OptionsButtonTemplate" movable="true" text="Automate!">
 				<Anchors>
-					<Ancor point="BOTTOM">
+					<Anchor point="BOTTOM">
 						<Offset x="105" y="5" />
 					</Anchor>
 				</Anchors>
